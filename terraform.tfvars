@@ -1,0 +1,5 @@
+rg_name = "my-test-rg"
+vnet_name = "my-test-vnet"
+subnet_name = "my-test-subnet"
+sg_name = "my-test-security-group"
+interf_name = "my-test-nic"
