@@ -14,10 +14,7 @@ env:
   RESOURCE_GROUP_NAME: my-tes-rg-tf-state
   CONTAINER_NAME: tfstate
   BLOB_NAME: terraform.tfstate
-  ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-  ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-  ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-  ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+  
   WORKING_DIRECTORY: wholeCodePipelineDevops
   
 jobs:
@@ -66,11 +63,8 @@ jobs:
       uses: Azure/login@v1.4.3
       with:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-        #creds: ${{ secrets.AZURE_CREDENTIALS }}
-        client-id: ${{ secrets.ARM_CLIENT_ID }}
-        tenant-id: ${{ secrets.ARM_TENANT_ID }}
-        subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        #client-secret:  ${{ secrets.ARM_CLIENT_SECRET }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
 
     - name: Create Terraform backend state storage
       uses: Azure/cli@v1.0.6
