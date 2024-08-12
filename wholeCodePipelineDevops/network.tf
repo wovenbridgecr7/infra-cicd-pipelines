@@ -76,6 +76,6 @@ resource "azurerm_virtual_network" "my-test-prod-vnet" {
   }
 
   resource "azurerm_network_interface_security_group_association" "associate_networknsg" {
-  network_interface_id      = azurerm_network_interface.my-test-interf
-  network_security_group_id = azurerm_network_security_group.my-test-sg
+  network_interface_id      = azurerm_network_interface.my-test-interf.id
+  network_security_group_id = azurerm_network_security_group.my-test-sg.id
 }
