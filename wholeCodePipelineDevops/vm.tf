@@ -20,7 +20,7 @@ resource "azurerm_virtual_machine" "my-test-vm1" {
   }
 
     storage_os_disk {
-    name              = "myosdisk1"
+    name              = "myosdiskeditedtobenew"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
@@ -35,5 +35,5 @@ resource "azurerm_virtual_machine" "my-test-vm1" {
     disable_password_authentication = false
   }
 
-
+  
 }
