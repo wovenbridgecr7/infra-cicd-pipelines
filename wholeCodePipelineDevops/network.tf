@@ -61,7 +61,7 @@ resource "azurerm_virtual_network" "my-test-prod-vnet" {
         network_security_group_name = azurerm_network_security_group.my-test-sg.name
   }
 
-  resource "azurerm_network_security_rule" "my-test-sgrule" {
+  resource "azurerm_network_security_rule" "my-test-sgrule23" {
         name                       = "test456"
         priority                   = 110
         direction                  = "Inbound"
